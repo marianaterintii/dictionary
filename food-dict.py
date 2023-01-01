@@ -1,3 +1,5 @@
+
+
 #Food order
 from os import system
 
@@ -15,9 +17,10 @@ order = {
 item_order = int(input("How many?: "))
 order["quantity"] = item_order
 order["discount"] = 20
+order ["total"] = order["price"]* order["quantity"]
+offer = order ["total"] * order ["discount"] / 100
 if order["quantity"] >= 7:
-    order ["total"] = order["price"]* order["quantity"]
-    offer = order ["total"] * order ["discount"] / 100
+    
     print ("Total:", order ["total"] - offer)
 else:
     print("Something went wrong")
@@ -38,14 +41,16 @@ if delivery == ("yes")  and order ["total"] >= 300:
     print("Food:"       , order ["item"])
     print("Price x qty:", order ["price"], "x", order ["quantity"])
     print("Delivery:"   , order ["delivery"])
-    print("Total:", order ["total"] )
+    print("Total:", order ["total"] - offer )
 else:
     order ["delivery"] = 50.00
     print("ORDER for:"  , order["client"])
     print("Food:"       , order ["item"])
     print("Price x qty:", order ["price"], "x", order ["quantity"])
     print("Delivery:"   , order ["delivery"])
-    print("Total:", order ["total"] + order ["delivery"])
+    print("Total:", order ["total"] + order ["delivery"] - offer)
 
 print()
+
+
 
