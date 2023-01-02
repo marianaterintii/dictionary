@@ -11,10 +11,10 @@ from datetime import datetime
 
 notes = [
     {  "text": "table 1, 2 soups",
-       "when": "17:8",
+       "when": "19:10",
     },
     {  "text": "bill to table 2",
-       "when": "17:10",
+       "when": "19:15",
     
     },
     {  "text": "call mom",
@@ -43,9 +43,10 @@ def showNotes(pnotes):
 def addNote (pnotes):
   text = input ("enter text: ")
 #HW: ask user for the note position
-  place = int (input ("which position to add and time?: ")) - 1
+  place = int (input ("which position to add?: ")) - 1
+  time = input ("at what time?: ") 
   if place >= 0 and place <= len(notes): 
-    pnotes.insert ( place, {"text": text, "when": "18:45"}) # tb de indicat si ora in input????
+    pnotes.insert ( place, {"text": text, "when": time}) 
   else:
     print("something wrong")
   #pnotes.append({ "text": text})
